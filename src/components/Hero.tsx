@@ -70,7 +70,7 @@ const Hero = () => {
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute top-1/4 left-10 w-2 h-2 bg-hu-gold rounded-full animate-pulse"></div>
+
       <div className="absolute top-1/2 right-20 w-3 h-3 bg-white/50 rounded-full animate-bounce"></div>
       <div className="absolute bottom-1/4 left-1/4 w-1 h-1 bg-hu-red rounded-full animate-ping"></div>
     </div>
