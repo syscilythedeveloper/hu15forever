@@ -157,8 +157,29 @@
   }
 }
 
+/* Custom HU Colors Flashing Animation */
+@keyframes flash-hu-colors {
+  0% {
+    background-color: rgba(220, 20, 60, 0.5); /* Transparent red */
+  }
+  33.33% {
+    background-color: rgba(31, 58, 147, 0.5); /* Transparent navy */
+  }
+  66.66% {
+    background-color: rgba(248, 248, 248, 0.5); /* Transparent cream */
+  }
+  100% {
+    background-color: rgba(220, 20, 60, 0.5); /* Transparent red */
+  }
+}
+
+.animate-flash-hu-colors {
+  animation: flash-hu-colors 5s ease-in-out infinite;
+}
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 /* HU Colors Utility Classes */
