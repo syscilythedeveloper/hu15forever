@@ -18,8 +18,7 @@ const Merch = () => {
       image: "/merch/hu-tshirt.jpg",
       alt: "Howard University Homecoming 2025 T-Shirt",
       category: "Apparel",
-      colors: ["Navy", "Red", "White", "Gold"],
-      sizes: ["S", "M", "L", "XL", "XXL"],
+      url: "https://example.com/hu-forever-tshirt",
     },
     {
       id: 2,
@@ -29,8 +28,6 @@ const Merch = () => {
       image: "/merch/bison-hoodie.jpg",
       alt: "Howard Bison Pride Hoodie",
       category: "Apparel",
-      colors: ["Navy", "Gray", "Black"],
-      sizes: ["S", "M", "L", "XL", "XXL"],
     },
     {
       id: 3,
@@ -40,8 +37,6 @@ const Merch = () => {
       image: "/merch/hu-cap.jpg",
       alt: "Howard University Homecoming Baseball Cap",
       category: "Accessories",
-      colors: ["Navy", "Red", "Black"],
-      sizes: ["One Size"],
     },
     {
       id: 4,
@@ -51,8 +46,6 @@ const Merch = () => {
       image: "/merch/mecca-sweatshirt.jpg",
       alt: "Howard University Mecca Alumni Sweatshirt",
       category: "Apparel",
-      colors: ["Navy", "Gray", "Maroon"],
-      sizes: ["S", "M", "L", "XL", "XXL"],
     },
     {
       id: 5,
@@ -62,8 +55,6 @@ const Merch = () => {
       image: "/merch/hu-tote.jpg",
       alt: "Howard University Forever Tote Bag",
       category: "Accessories",
-      colors: ["Navy", "Natural", "Black"],
-      sizes: ["One Size"],
     },
     {
       id: 6,
@@ -73,8 +64,6 @@ const Merch = () => {
       image: "/merch/license-plate.jpg",
       alt: "Howard Bison Alumni License Plate Frame",
       category: "Accessories",
-      colors: ["Navy/Gold", "Black/Red"],
-      sizes: ["Standard"],
     },
     {
       id: 7,
@@ -84,8 +73,6 @@ const Merch = () => {
       image: "/merch/hu-mug.jpg",
       alt: "Howard University Homecoming 2025 Coffee Mug",
       category: "Drinkware",
-      colors: ["Navy", "White", "Red"],
-      sizes: ["11oz", "15oz"],
     },
     {
       id: 8,
@@ -95,8 +82,6 @@ const Merch = () => {
       image: "/merch/class-polo.jpg",
       alt: "Howard University Class of 2015 Reunion Polo",
       category: "Apparel",
-      colors: ["Navy", "White", "Gray"],
-      sizes: ["S", "M", "L", "XL", "XXL"],
     },
   ];
 
@@ -195,44 +180,6 @@ const Merch = () => {
                             {item.originalPrice}
                           </span>
                         )}
-                      </div>
-
-                      {/* Colors Available */}
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs text-gray-600">Colors:</span>
-                        <div className="flex gap-1">
-                          {item.colors.slice(0, 3).map((color, index) => (
-                            <div
-                              key={index}
-                              className="w-4 h-4 rounded-full border border-gray-300"
-                              style={{
-                                backgroundColor:
-                                  color === "Navy"
-                                    ? "#1F3A93"
-                                    : color === "Red"
-                                    ? "#DC143C"
-                                    : color === "Gold"
-                                    ? "#FFD700"
-                                    : color === "White"
-                                    ? "#FFFFFF"
-                                    : color === "Black"
-                                    ? "#000000"
-                                    : color === "Gray"
-                                    ? "#808080"
-                                    : color === "Natural"
-                                    ? "#F5F5DC"
-                                    : color === "Maroon"
-                                    ? "#800000"
-                                    : "#E5E5E5",
-                              }}
-                            ></div>
-                          ))}
-                          {item.colors.length > 3 && (
-                            <span className="text-xs text-gray-500">
-                              +{item.colors.length - 3}
-                            </span>
-                          )}
-                        </div>
                       </div>
 
                       {/* Add to Cart Button */}
