@@ -14,7 +14,6 @@ const Merch = () => {
       id: 1,
       name: "HU Forever 2025 T-Shirt",
       price: "$25.00",
-
       image: "/merch/hu-tshirt.jpg",
       alt: "Howard University Homecoming 2025 T-Shirt",
       category: "Apparel",
@@ -24,64 +23,37 @@ const Merch = () => {
       id: 2,
       name: "Bison Pride Hoodie",
       price: "$45.00",
-      originalPrice: "$60.00",
       image: "/merch/bison-hoodie.jpg",
       alt: "Howard Bison Pride Hoodie",
       category: "Apparel",
+      url: "https://example.com/hu-forever-tshirt",
     },
     {
       id: 3,
       name: "HU Homecoming 2025 Cap",
       price: "$20.00",
-
       image: "/merch/hu-cap.jpg",
       alt: "Howard University Homecoming Baseball Cap",
       category: "Accessories",
+      url: "https://example.com/hu-forever-tshirt",
     },
     {
       id: 4,
       name: "Mecca Alumni Sweatshirt",
       price: "$40.00",
-      originalPrice: "$55.00",
       image: "/merch/mecca-sweatshirt.jpg",
       alt: "Howard University Mecca Alumni Sweatshirt",
       category: "Apparel",
+      url: "https://example.com/hu-forever-tshirt",
     },
     {
       id: 5,
       name: "HU Forever Tote Bag",
       price: "$15.00",
-
       image: "/merch/hu-tote.jpg",
       alt: "Howard University Forever Tote Bag",
       category: "Accessories",
-    },
-    {
-      id: 6,
-      name: "Alumni License Plate Frame",
-      price: "$12.00",
-      originalPrice: "$18.00",
-      image: "/merch/license-plate.jpg",
-      alt: "Howard Bison Alumni License Plate Frame",
-      category: "Accessories",
-    },
-    {
-      id: 7,
-      name: "HU Homecoming 2025 Mug",
-      price: "$18.00",
-      originalPrice: "$25.00",
-      image: "/merch/hu-mug.jpg",
-      alt: "Howard University Homecoming 2025 Coffee Mug",
-      category: "Drinkware",
-    },
-    {
-      id: 8,
-      name: "Class of 2015 Reunion Polo",
-      price: "$35.00",
-      originalPrice: "$50.00",
-      image: "/merch/class-polo.jpg",
-      alt: "Howard University Class of 2015 Reunion Polo",
-      category: "Apparel",
+      url: "https://twitter.com",
     },
   ];
 
@@ -151,21 +123,10 @@ const Merch = () => {
                         <p className="text-sm opacity-75">Product Image</p>
                       </div>
                     </div>
-
-                    {/* Sale Badge */}
-                    {item.originalPrice && (
-                      <div className="absolute top-3 right-3 bg-hu-red text-white px-2 py-1 rounded-full text-xs font-bold">
-                        SALE
-                      </div>
-                    )}
                   </div>
 
-                  {/* Product Content */}
                   <CardContent className="p-6">
                     <div className="space-y-3">
-                      <p className="text-sm font-semibold text-hu-gold tracking-wider uppercase">
-                        {item.category}
-                      </p>
                       <h3 className="text-lg font-bold text-hu-navy leading-tight">
                         {item.name}
                       </h3>
@@ -175,17 +136,16 @@ const Merch = () => {
                         <span className="text-xl font-bold text-hu-red">
                           {item.price}
                         </span>
-                        {item.originalPrice && (
-                          <span className="text-sm text-gray-500 line-through">
-                            {item.originalPrice}
-                          </span>
-                        )}
                       </div>
 
-                      {/* Add to Cart Button */}
-                      <button className="w-full bg-hu-navy text-white py-2 rounded-lg hover:bg-hu-light-blue transition-colors font-semibold">
-                        Add to Cart
-                      </button>
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full block bg-hu-red text-white py-2 rounded-lg hover:bg-hu-gold transition-colors font-bold text-center mt-2"
+                      >
+                        Buy Now
+                      </a>
                     </div>
                   </CardContent>
                 </div>
