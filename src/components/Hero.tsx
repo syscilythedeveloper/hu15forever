@@ -64,7 +64,7 @@ const Hero = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="border border-white rounded-lg px-6 py-6 bg-white/10 min-w-[90px] flex flex-col items-center"
+              className="border border-white rounded-lg px-6 py-6 bg-white/10 min-w-[90px] w-32 h-28 flex flex-col items-center justify-center"
             >
               <div className="text-3xl font-extrabold mb-1">{item.value}</div>
               <div className="mt-1 text-sm tracking-widest uppercase border-t border-hu-red pt-1">
