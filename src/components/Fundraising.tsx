@@ -1,40 +1,45 @@
 "use client";
 import React from "react";
 import { Progress } from "@/components/ui/progress";
-import { Button } from "./ui/button";
 
 const Fundraising = () => {
+  const raised = 500;
+  const goal = 5000;
   return (
-    <div className="w-full py-8">
+    <div className="w-full py-12 flex flex-col items-center">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-3">
-          <div className="p-1.5 rounded-lg animate-flash-hu-colors"></div>
-          <h2 className="text-3xl font-bold text-white">Support the Cause</h2>
-        </div>
+      <div className="flex items-center gap-3 mb-8">
+        <div className="p-1.5 rounded-lg animate-flash-hu-colors"></div>
+        <h2 className="text-3xl font-bold text-hu-gold drop-shadow-lg font-montserrat">
+          Support the Cause
+        </h2>
       </div>
 
       {/* Fundraising Card */}
-      <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 shadow-2xl outline-red-700 outline-1 outline-offset-2">
-        <div>
-          <p className="text-gray-700 flex-1 mr-4 mb-5 text-lg">
-            Help us reach our fundraising goal of $_______ to support ________
-          </p>
-        </div>
-
+      <div className="max-w-xl w-full bg-[#001229]/80 border border-hu-red rounded-2xl shadow-2xl backdrop-blur-md p-8 flex flex-col items-center">
+        <p className="text-lg text-white mb-5 font-semibold font-montserrat text-center">
+          Help us reach our goal to fund scholarships, events, and community
+          initiatives for Howard alumni. Every dollar brings us closer to an
+          unforgettable Homecoming week!
+        </p>
         <Progress
-          value={75}
-          className="mb-4"
+          value={(raised / goal) * 100}
+          className="mb-4 w-full bg-gray-300 [&>div]:bg-green-600"
         />
-        <div className="flex items-center justify-between mt-5 mb-2">
-          <p className="text-lg text-blue-600 ">Raised: $____ / Goal: $_____</p>
-          <Button
-            className="bg-green-600 text-white hover:bg-hu-red flex-shrink-0"
-            onClick={() => alert("Thank you for your support!")}
-          >
-            Donate Now
-          </Button>
-        </div>
+        <p className="text-lg text-hu-gold font-bold mb-4 font-montserrat">
+          <span>Raised: ${raised}</span>
+          <br />
+          <span>Goal: ${goal}</span>
+        </p>
+
+        <a
+          href="https://gofundme.com/your-campaign-url"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full block bg-hu-red text-white py-3 rounded-lg hover:bg-hu-gold transition-colors font-bold text-center font-montserrat text-lg shadow-md"
+        >
+          Donate Now
+        </a>
       </div>
     </div>
   );
