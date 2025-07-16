@@ -9,7 +9,7 @@ export default function Navbar() {
   const handleLinkClick = () => setMenuOpen(false);
 
   return (
-    <nav className="navbar fixed top-0 left-0 right-0 z-50 pl-2 pr-6 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 pl-2 pr-6 py-4 bg-transparent">
       <div className="w-full flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center">

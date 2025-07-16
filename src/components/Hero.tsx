@@ -1,79 +1,80 @@
-import React from "react";
-import Image from "next/image";
+"use client";
+import React, { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: "--",
+    hours: "--",
+    minutes: "--",
+    seconds: "--",
+  });
+
+  // Set your reunion start date here
+  const targetDate = new Date("2025-10-19T00:00:00");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+      const distance = targetDate.getTime() - now.getTime();
+
+      if (distance <= 0) {
+        clearInterval(interval);
+        setTimeLeft({ days: "0", hours: "0", minutes: "0", seconds: "0" });
+      } else {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+
+        setTimeLeft({
+          days: days.toString(),
+          hours: hours.toString().padStart(2, "0"),
+          minutes: minutes.toString().padStart(2, "0"),
+          seconds: seconds.toString().padStart(2, "0"),
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="hero-background min-h-screen pt-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          {/* Text Content */}
-          <div className="text-center lg:text-left space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-7xl lg:text-8xl font-black text-white tracking-tight leading-none">
-                <span
-                  className="block bg-gradient-to-r from-white via-hu-blue to-white bg-clip-text text-transparent font-black uppercase tracking-wider"
-                  style={{
-                    fontFamily:
-                      'Impact, "Arial Black", "Franklin Gothic Bold", Charcoal, sans-serif',
-                  }}
-                >
-                  Insert Some
-                </span>
-                <span
-                  className="block text-hu-gold font-light bg-clip-text text-transparent uppercase tracking-wider"
-                  style={{
-                    fontFamily:
-                      'Impact, "Arial Black", "Franklin Gothic Bold", Charcoal, sans-serif',
-                  }}
-                >
-                  Text Here
-                </span>
-              </h1>
+    <section className="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white text-center px-4">
+      <div className="max-w-4xl w-full flex flex-col justify-center items-center h-full py-8 gap-8">
+        <h3 className="uppercase text-base sm:text-lg md:text-xl tracking-widest mb-3 font-semibold">
+          Class of 2015
+        </h3>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide drop-shadow-md mb-4">
+          HOWARD UNIVERSITY
+        </h1>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-2 text-hu-red tracking-widest drop-shadow-lg mb-4">
+          10-YEAR REUNION
+        </h2>
+        <p className="text-hu-gold text-base sm:text-lg md:text-xl mt-1 font-semibold tracking-wider mb-6">
+          OCT 19, 2025 – OCT 26, 2025
+        </p>
 
-              <div className="text-2xl lg:text-3xl text-white font-light tracking-wide">
-                <p className="mb-2">October 19, 2025</p>
-                <p className="text-hu-gold">—</p>
-                <p>October 26, 2025</p>
+        {/* Countdown Timer */}
+        <div className="flex justify-center gap-6 mt-8 flex-wrap">
+          {[
+            { value: timeLeft.days, label: "DAYS" },
+            { value: timeLeft.hours, label: "HOURS" },
+            { value: timeLeft.minutes, label: "MINUTES" },
+            { value: timeLeft.seconds, label: "SECONDS" },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="border border-white rounded-lg px-6 py-6 bg-white/10 min-w-[90px] flex flex-col items-center"
+            >
+              <div className="text-3xl font-extrabold mb-1">{item.value}</div>
+              <div className="mt-1 text-sm tracking-widest uppercase border-t border-hu-red pt-1">
+                {item.label}
               </div>
             </div>
-
-            <div className="space-y-6">
-              <p className="text-xl lg:text-2xl text-white font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Celebrating ______________ and{" "}
-                <span className="text-hu-gold font-semibold italic">
-                  FILL THIS IN LATER
-                </span>
-              </p>
-            </div>
-          </div>
-
-          {/* Image Section */}
-          <div className="relative">
-            <div className="relative z-10">
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-2 shadow-2xl">
-                <Image
-                  src="/Howard.png"
-                  width={600}
-                  height={400}
-                  alt="HU Forever Homecoming 2025"
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-32 h-32 bg-hu-gold/20 rounded-full blur-xl"></div>
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-hu-red/20 rounded-full blur-xl"></div>
-          </div>
+          ))}
         </div>
       </div>
-
-      {/* Floating Elements */}
-
-      <div className="absolute top-1/2 right-20 w-3 h-3 bg-white/50 rounded-full animate-bounce"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-1 h-1 bg-hu-red rounded-full animate-ping"></div>
-    </div>
+    </section>
   );
 };
 

@@ -51,6 +51,9 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
+.border-hu-red {
+  border-color: var(--hu-red);
+}
 
 @layer base {
   :root {
@@ -98,38 +101,7 @@
   box-shadow: 0 4px 12px var(--hu-white);
 }
 
-/* Background Pattern */
-.hero-background {
-  background: linear-gradient(
-    135deg,
-    var(--hu-navy) 0%,
-    var(--hu-light-blue) 50%,
-    var(--hu-red) 100%
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
-  position: relative;
-}
-
-.hero-background::before {
-  content: none;
-}
-
 /* Custom HU Colors Flashing Animation */
-@keyframes flash-hu-colors {
-  0% {
-    background-color: rgba(220, 20, 60, 0.5); /* Transparent red */
-  }
-  33.33% {
-    background-color: rgba(31, 58, 147, 0.5); /* Transparent navy */
-  }
-  66.66% {
-    background-color: rgba(248, 248, 248, 0.5); /* Transparent cream */
-  }
-  100% {
-    background-color: rgba(220, 20, 60, 0.5); /* Transparent red */
-  }
-}
 
 .animate-flash-hu-colors {
   animation: flash-hu-colors 5s ease-in-out infinite;
@@ -262,6 +234,6 @@ html {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    background: transparent;
   }
 }
