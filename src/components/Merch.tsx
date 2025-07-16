@@ -128,7 +128,7 @@ const Merch = () => {
               key={item.id}
               className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
             >
-              <Card className="overflow-hidden bg-white/95 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0">
+              <Card className="overflow-hidden bg-white/80 backdrop-blur-md border border-hu-navy shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative">
                   {/* Product Image */}
                   <div className="relative h-48 bg-gradient-to-br from-hu-navy to-hu-light-blue">

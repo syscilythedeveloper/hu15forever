@@ -10,7 +10,7 @@ const Hero = () => {
   });
 
   // Set your reunion start date here
-  const targetDate = new Date("2025-10-19T00:00:00");
+  const targetDate = new Date("2025-10-23T00:00:00");
 
   useEffect(() => {
     const interval = setInterval(() => {
