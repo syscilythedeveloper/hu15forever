@@ -4,7 +4,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* HU Forever Brand Colors */
   --hu-navy: #1f3a93;
   --hu-red: #dc143c;
   --hu-light-blue: #4169e1;
@@ -12,9 +11,6 @@
   --hu-white: #ffffff;
   --hu-cream: #f8f8f8;
 
-  /* Default theme variables */
-
-  /* Navbar specific variables */
   --navbar-bg: linear-gradient(
     135deg,
     var(--hu-navy) 0%,
@@ -116,45 +112,7 @@
 }
 
 .hero-background::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: radial-gradient(
-      circle at 25% 25%,
-      rgba(255, 215, 0, 0.1) 0%,
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 75% 75%,
-      rgba(220, 20, 60, 0.1) 0%,
-      transparent 25%
-    );
-  background-size: 100px 100px;
-  animation: float 6s ease-in-out infinite alternate;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
+  content: none;
 }
 
 /* Custom HU Colors Flashing Animation */
@@ -275,7 +233,7 @@ html {
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+  --secondary-foreground: var(--hu-white);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
