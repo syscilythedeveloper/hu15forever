@@ -141,6 +141,13 @@ html {
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
 }
 
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 /* Card Styles with HU Theme */
 .hu-card {
   background: rgb(174, 213, 243);

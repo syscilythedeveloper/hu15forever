@@ -39,7 +39,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white text-center px-4">
+    <section className="hero relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white text-center px-4">
       <div className="max-w-4xl w-full flex flex-col justify-center items-center h-full py-8 gap-8">
         <h3 className="uppercase text-base sm:text-lg md:text-xl tracking-widest mb-3 font-semibold">
           Class of 2015
