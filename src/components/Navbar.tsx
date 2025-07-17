@@ -82,7 +82,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Dropdown */}
         {menuOpen && (
-          <div className="md:hidden flex flex-col bg-hu-navy text-white rounded-lg shadow-lg mt-2 px-4 py-3 space-y-2 animate-fade-in absolute left-2 right-6 top-full z-50">
+          <div className="md:hidden flex flex-col  bg-blue-950/80 backdrop-blur-md text-white rounded-lg shadow-lg mt-2 px-4 py-3 space-y-2 animate-fade-in absolute left-2 right-6 top-full z-50">
             <a
               href="#home"
               className="navbar-link"
