@@ -14,7 +14,7 @@ const Events = () => {
       id: 1,
       date: "OCTOBER 19, 2025",
       title: "Royal Court Coronation | Homecoming 2025",
-      image: "/events/royal-court.jpg", // You'll need to add these images
+      image: "/events/royal-court.jpg",
       alt: "Royal Court Coronation with crown",
     },
     {

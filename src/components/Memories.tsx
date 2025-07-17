@@ -1,3 +1,4 @@
+//to do: add feature to upload photos to google drive
 import React from "react";
 
 const Memories = () => {

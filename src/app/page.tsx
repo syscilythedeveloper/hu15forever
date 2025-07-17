@@ -18,6 +18,13 @@ export default function Home() {
             <Hero />
           </div>
           <Separator />
+          {/* Memories Section */}
+          <div id="memories">
+            <Memories />
+          </div>
+          <Separator />
+
+          {/* Fundraising Section */}
           {/* Events Section */}
           <div id="events">
             <Events />
@@ -33,11 +40,6 @@ export default function Home() {
           {/* Fundraising Section */}
           <div id="fundraising">
             <Fundraising />{" "}
-          </div>
-          <Separator />
-          {/* Memories Section */}
-          <div id="memories">
-            <Memories />
           </div>
           <Separator />
         </div>

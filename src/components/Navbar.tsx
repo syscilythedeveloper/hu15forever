@@ -31,6 +31,12 @@ export default function Navbar() {
             >
               Home
             </a>
+            <a
+              href="#memories"
+              className="navbar-link"
+            >
+              Memories
+            </a>
 
             <a
               href="#events"
@@ -49,12 +55,6 @@ export default function Navbar() {
               className="navbar-link"
             >
               Fundraising
-            </a>
-            <a
-              href="#memories"
-              className="navbar-link"
-            >
-              Memories
             </a>
           </div>
 
