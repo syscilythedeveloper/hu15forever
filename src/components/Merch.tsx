@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import ComingSoonOverlay from "./ComingSoonOverlay";
 
 const Merch = () => {
   const merchItems = [
@@ -18,6 +19,7 @@ const Merch = () => {
       alt: "Howard University Homecoming 2025 T-Shirt",
       category: "Apparel",
       url: "https://example.com/hu-forever-tshirt",
+      status: "unreleased",
     },
     {
       id: 2,
@@ -27,6 +29,7 @@ const Merch = () => {
       alt: "Howard Bison Pride Hoodie",
       category: "Apparel",
       url: "https://example.com/hu-forever-tshirt",
+      status: "unreleased",
     },
     {
       id: 3,
@@ -36,6 +39,7 @@ const Merch = () => {
       alt: "Howard University Homecoming Baseball Cap",
       category: "Accessories",
       url: "https://example.com/hu-forever-tshirt",
+      status: "unreleased",
     },
     {
       id: 4,
@@ -45,6 +49,7 @@ const Merch = () => {
       alt: "Howard University Mecca Alumni Sweatshirt",
       category: "Apparel",
       url: "https://example.com/hu-forever-tshirt",
+      status: "unreleased",
     },
     {
       id: 5,
@@ -54,6 +59,7 @@ const Merch = () => {
       alt: "Howard University Forever Tote Bag",
       category: "Accessories",
       url: "https://twitter.com",
+      status: "unreleased",
     },
   ];
 
@@ -68,22 +74,6 @@ const Merch = () => {
             <h2 className="text-3xl font-bold text-white">Merch</h2>
           </div>
         </div>
-        <button className="text-blue-400 hover:text-blue-300 flex items-center gap-2 font-medium">
-          View All Items
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
       </div>
 
       {/* Merchandise Carousel */}
@@ -100,7 +90,8 @@ const Merch = () => {
               key={item.id}
               className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
             >
-              <Card className="overflow-hidden bg-white/80 backdrop-blur-md border border-hu-navy shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <Card className="overflow-hidden bg-white/80 backdrop-blur-md border border-hu-gold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                {item.status === "unreleased" && <ComingSoonOverlay />}
                 <div className="relative">
                   {/* Product Image */}
                   <div className="relative h-48 bg-gradient-to-br from-hu-navy to-hu-light-blue">
@@ -125,7 +116,7 @@ const Merch = () => {
                     </div>
                   </div>
 
-                  <CardContent className="p-6">
+                  <CardContent className="p-4">
                     <div className="space-y-3">
                       <h3 className="text-lg font-bold text-hu-navy leading-tight">
                         {item.name}

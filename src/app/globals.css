@@ -131,6 +131,12 @@ html {
 .bg-hu-gold {
   background-color: var(--hu-gold);
 }
+.border-hu-navy {
+  border-color: var(--hu-navy);
+}
+.border-hu-gold {
+  border-color: var(--hu-gold);
+}
 
 /* Text Shadow Utilities */
 .text-shadow {

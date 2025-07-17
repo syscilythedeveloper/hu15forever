@@ -3,6 +3,7 @@
 //---- in the dialog form, add a button to upload photos with a link to the google drive
 // to consider: Should I use an api to upload photos directly? or use a google form with pre-existing authentication to add to the drive?
 import React from "react";
+import Link from "next/link";
 
 const Memories = () => {
   return (
@@ -17,9 +18,14 @@ const Memories = () => {
           <br />
           We’re spotlighting alumni all the way up to reunion week!
         </p>
-        <button className="bg-hu-red hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-200">
-          Upload Photos
-        </button>
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdF0Lt587CoJrIdLc-gIds4NyhZNrPM5DTXu1rYLKYfceiWNQ/viewform?usp=header"
+          passHref
+        >
+          <button className="bg-hu-red hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-200">
+            Upload Photos
+          </button>
+        </Link>
       </div>
     </section>
   );

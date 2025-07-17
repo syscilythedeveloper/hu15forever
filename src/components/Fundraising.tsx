@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Progress } from "@/components/ui/progress";
+import ComingSoonOverlay from "./ComingSoonOverlay";
 
 const Fundraising = () => {
   const raised = 500;
@@ -17,6 +18,7 @@ const Fundraising = () => {
 
       {/* Fundraising Card */}
       <div className="max-w-xl w-full bg-[#001229]/80 border border-hu-red rounded-2xl shadow-2xl backdrop-blur-md p-8 flex flex-col items-center">
+        <ComingSoonOverlay />
         <p className="text-lg text-white mb-5 font-semibold font-montserrat text-center">
           Help us reach our goal to fund scholarships, events, and community
           initiatives for Howard alumni. Every dollar brings us closer to an

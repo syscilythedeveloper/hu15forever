@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import ComingSoonOverlay from "./ComingSoonOverlay";
 
 const Events = () => {
   const events = [
@@ -16,6 +17,7 @@ const Events = () => {
       title: "Royal Court Coronation | Homecoming 2025",
       image: "/events/royal-court.jpg",
       alt: "Royal Court Coronation with crown",
+      status: "unreleased",
     },
     {
       id: 2,
@@ -23,6 +25,7 @@ const Events = () => {
       title: "Tail gate @ _____ | Homecoming 2025",
       image: "/events/bison-madness.jpg",
       alt: "Tail Gate",
+      status: "unreleased",
     },
     {
       id: 3,
@@ -30,6 +33,7 @@ const Events = () => {
       title: "Lavender Reception | Homecoming 2025",
       image: "/events/lavender-reception.jpg",
       alt: "Lavender Reception party",
+      status: "unreleased",
     },
     {
       id: 4,
@@ -37,6 +41,7 @@ const Events = () => {
       title: "Fashion Show | Homecoming 2025",
       image: "/events/fashion-show.jpg",
       alt: "Fashion Show",
+      status: "unreleased",
     },
 
     {
@@ -45,6 +50,7 @@ const Events = () => {
       title: "Club ____  | Homecoming 2025",
       image: "/events/fashion-show.jpg",
       alt: "Fashion Show",
+      status: "unreleased",
     },
 
     {
@@ -53,6 +59,7 @@ const Events = () => {
       title: "After Move | Homecoming 2025",
       image: "/events/fashion-show.jpg",
       alt: "Fashion Show",
+      status: "unreleased",
     },
   ];
 
@@ -66,22 +73,6 @@ const Events = () => {
             <h2 className="text-3xl font-bold text-white">Events</h2>
           </div>
         </div>
-        <button className="text-blue-400 hover:text-blue-300 flex items-center gap-2 font-medium">
-          View All Events
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
       </div>
 
       {/* Events Carousel */}
@@ -98,11 +89,11 @@ const Events = () => {
               key={event.id}
               className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
             >
-              <Card className="overflow-hidden bg-white/80 backdrop-blur-md border border-hu-navy shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <Card className="overflow-hidden bg-white/80 backdrop-blur-md border border-hu-gold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                {event.status === "unreleased" && <ComingSoonOverlay />}
                 <div className="relative">
                   {/* Event Image */}
                   <div className="relative h-48 bg-gradient-to-br from-hu-navy to-hu-light-blue">
-                    {/* Placeholder for now - you can replace with actual images */}
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-white text-center">
