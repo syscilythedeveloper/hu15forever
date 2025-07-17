@@ -19,6 +19,7 @@ const Memories = () => {
           We’re spotlighting alumni all the way up to reunion week!
         </p>
         <Link
+          target="_blank"
           href="https://docs.google.com/forms/d/e/1FAIpQLSdF0Lt587CoJrIdLc-gIds4NyhZNrPM5DTXu1rYLKYfceiWNQ/viewform?usp=header"
           passHref
         >
