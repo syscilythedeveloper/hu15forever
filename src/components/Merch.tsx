@@ -64,16 +64,13 @@ const Merch = () => {
   ];
 
   return (
-    <div className="w-full py-8">
+    <div className="w-full py-12 flex flex-col items-center">
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-3">
-            <div className="p-1.5 rounded-lg animate-flash-hu-colors"></div>
-            <h2 className="text-3xl font-bold text-white">Merch</h2>
-          </div>
-        </div>
+      <div className="flex items-center gap-3 mb-8">
+        <div className="p-1.5 rounded-lg animate-flash-hu-colors"></div>
+        <h2 className="text-3xl font-bold text-hu-gold drop-shadow-lg font-montserrat">
+          Merch
+        </h2>
       </div>
 
       {/* Merchandise Carousel */}
