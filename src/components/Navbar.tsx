@@ -91,11 +91,11 @@ export default function Navbar() {
               Home
             </a>
             <a
-              href="#fundraising"
+              href="#memories"
               className="navbar-link"
               onClick={handleLinkClick}
             >
-              Fundraising
+              Memories
             </a>
             <a
               href="#events"
@@ -112,11 +112,11 @@ export default function Navbar() {
               Merch
             </a>
             <a
-              href="#contact"
+              href="#fundraising"
               className="navbar-link"
               onClick={handleLinkClick}
             >
-              Contact
+              Fundraising
             </a>
           </div>
         )}
