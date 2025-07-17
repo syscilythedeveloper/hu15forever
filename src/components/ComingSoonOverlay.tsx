@@ -3,7 +3,7 @@ import React from "react";
 const ComingSoonOverlay = () => {
   return (
     <div
-      className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white text-center p-4"
+      className="absolute inset-0 z-10 flex flex-col items-center justify-center  text-white text-center p-4 rounded-2xl"
       style={{
         background:
           `repeating-linear-gradient(90deg, #b91c1c 0 20px, #991b1b 20px 40px, #b91c1c 40px 60px, #991b1b 60px 80px),` +

@@ -17,7 +17,8 @@ const Fundraising = () => {
       </div>
 
       {/* Fundraising Card */}
-      <div className="max-w-xl w-full bg-[#001229]/80 border border-hu-red rounded-2xl shadow-2xl backdrop-blur-md p-8 flex flex-col items-center">
+
+      <div className="max-w-xl w-full bg-white/80 border border-hu-gold rounded-xl shadow-2xl backdrop-blur-md p-8 flex flex-col items-center relative">
         <ComingSoonOverlay />
         <p className="text-lg text-white mb-5 font-semibold font-montserrat text-center">
           Help us reach our goal to fund scholarships, events, and community
