@@ -88,19 +88,6 @@ const Events = () => {
         {/* Row: prev | content | next */}
         <div className="flex w-full items-center gap-4">
           {/* Prev button OUTSIDE the track */}
-          <CarouselPrevious
-            className="
-              static translate-y-0
-              shrink-0 self-center
-              h-10 w-10 md:h-12 md:w-12
-              rounded-full  bg-white/10
-              text-yellow-600/60
-             border  border-yellow-600/30
-              hover:bg-accent hover:text-accent-foreground
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
-            "
-            aria-label="Previous events"
-          />
 
           {/* Slide track */}
           <div className="w-full">
@@ -210,20 +197,8 @@ const Events = () => {
             </CarouselContent>
           </div>
 
-          {/* Next button OUTSIDE the track */}
-          <CarouselNext
-            className="
-              static translate-y-0
-              shrink-0 self-center
-              h-10 w-10 md:h-12 md:w-12
-              rounded-full  bg-white/10
-              text-yellow-600/60
-             border  border-yellow-600/30
-              hover:bg-accent hover:text-accent-foreground
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
-            "
-            aria-label="Next events"
-          />
+          <CarouselPrevious className="left-2" />
+          <CarouselNext className="right-2" />
         </div>
       </Carousel>
     </div>
