@@ -12,55 +12,36 @@ export default function ScholarshipFund() {
       </h2>
 
       <section className="w-full px-4 py-12 flex justify-center">
-        <div className="w-full max-w-5xl rounded-2xl shadow-elegant overflow-hidden bg-blue-900/10 border border-blue-900/80">
-          {/* Top bar with logos */}
-          <div className="flex items-center justify-between px-6 md:px-10 py-6 border-b border-blue-900/40">
-            <div className="flex items-center gap-4">
-              {/* Placeholder for HU15 logo */}
-              <div className="inline-block  border border-slate-600 rounded-2xl ">
-                <Image
-                  src="/hu15forever.jpeg"
-                  width={200}
-                  height={200}
-                  alt="HU15 Forever Logo"
-                  className="h-12 md:h-16 w-auto object-contain rounded-lg shadow-sm"
-                />
-              </div>
-              <div className="text-white/80 text-sm">×</div>
-              {/* GiveButter logo placeholder */}
-              <div className="inline-block border border-slate-600 rounded-2xl bg-slate-400">
-                <Image
-                  src="/Givebutter-logo.avif"
-                  width={200}
-                  height={200}
-                  alt="Givebutter Logo"
-                  className="h-12  md:h-16 w-16 object-contain rounded-lg shadow-sm"
-                />
-              </div>
-            </div>
-            <div className="text-white/60 text-sm font-medium">
-              Powered by Givebutter
-            </div>
-          </div>
-
+        <div className="relative w-full max-w-5xl rounded-2xl shadow-elegant overflow-hidden bg-blue-900/10 border border-blue-900/80">
           {/* Main content */}
-          <div className="grid md:grid-cols-2 gap-8 px-6 md:px-10 py-10">
+          <div className="grid md:grid-cols-2 gap-8 px-6 md:px-10 pb-10 pt-2">
             {/* Left: Headings & taglines */}
             <div>
-              <p className="text-hu-gold text-sm tracking-widest font-semibold uppercase mb-2">
-                Howard University · Class of 2015
-              </p>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
-                10‑Year Reunion Scholarship Fund
+              <div className="flex justify-left  w-25 bg-blue-800/10 p-2 rounded-lg mb-4 gap-3">
+                <Image
+                  src="/hu15forever.jpeg"
+                  width={40}
+                  height={40}
+                  alt="HU15 Forever Logo"
+                  className="h-8 w-auto object-contain rounded-lg shadow-sm"
+                />
+
+                <Image
+                  src="/Givebutter-logo.avif"
+                  width={40}
+                  height={40}
+                  alt="Givebutter Logo"
+                  className="h-8 w-8 object-contain rounded-lg shadow-sm "
+                />
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center">
+                10-Year Reunion Scholarship Fund
               </h2>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                <span className="text-xs md:text-sm text-white/90 bg-white/10 border border-white/15 rounded-full px-3 py-1">
+                <span className="text-hu-gold text-sm font-semibold uppercase mb-2 text-center">
                   Donate today. Share with classmates. Make an impact.
-                </span>
-                <span className="text-xs md:text-sm text-white/90 bg-white/10 border border-white/15 rounded-full px-3 py-1">
-                  All proceeds go directly toward helping a graduating senior
-                  cover their Spring 2026 balance.
                 </span>
               </div>
             </div>
@@ -83,7 +64,7 @@ export default function ScholarshipFund() {
               <Button
                 asChild
                 variant="secondary"
-                className="mt-6 w-full gap-2 font-semibold py-3 h-auto"
+                className="mt-6 w-full gap-2 font-semibold py-3 h-auto bg-green-400"
               >
                 <a
                   href={donateUrl}
@@ -94,20 +75,18 @@ export default function ScholarshipFund() {
                   <ExternalLink className="h-5 w-5" />
                 </a>
               </Button>
-
-              <p className="mt-3 text-xs text-white/70 text-center break-all">
-                givebutter.com/HU15
-              </p>
             </div>
           </div>
 
           {/* Footer note */}
           <div className="px-6 md:px-10 pb-8 -mt-4">
-            <p className="text-white/70 text-sm">
+            <p className="text-[10px] md:text-sm text-hu-gold ">
               Your gift directly supports a Class of 2015 senior by helping
               cover their remaining Spring 2026 balance.
             </p>
           </div>
+
+          {/* Bottom-right logos */}
         </div>
       </section>
     </>

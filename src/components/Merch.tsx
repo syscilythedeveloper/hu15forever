@@ -115,16 +115,18 @@ const Merch = () => {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 bg-hu-red text-white px-4 py-2 rounded-lg font-bold shadow-lg opacity-90 hover:bg-hu-gold hover:text-hu-navy transition-colors"
+                  className="mt-4 bg-hu-red text-white px-4 py-2 rounded-lg font-bold shadow-lg hover:bg-hu-gold hover:text-hu-navy transition-colors opacity-90 cursor-not-allowed pointer-events-none"
+                  aria-label={item.name}
+                  tabIndex={-1}
                 >
-                  Buy Now
+                  Available Soon
                 </a>
               </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-2" />
-        <CarouselNext className="right-2" />
+        <CarouselPrevious className="left-2 bg-blue-400/30 border border-blue-400/20 rounded-full p-1" />
+        <CarouselNext className="right-2 bg-blue-400/30 border border-blue-400/20 rounded-full p-1" />
       </Carousel>
     </div>
   );

@@ -197,8 +197,8 @@ const Events = () => {
             </CarouselContent>
           </div>
 
-          <CarouselPrevious className="left-2" />
-          <CarouselNext className="right-2" />
+          <CarouselPrevious className="left-2 bg-blue-200/30 border border-blue-200/20 rounded-full p-1" />
+          <CarouselNext className="right-2 bg-blue-200/30 border border-blue-200/20 rounded-full p-1" />
         </div>
       </Carousel>
     </div>
