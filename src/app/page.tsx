@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Fundraising from "@/components/Fundraising";
+import Scholarship from "@/components/Scholarship";
 import Events from "@/components/Events";
 import Merch from "@/components/Merch";
 import Memories from "@/components/Memories";
@@ -39,7 +39,7 @@ export default function Home() {
 
           {/* Fundraising Section */}
           <div id="fundraising">
-            <Fundraising />{" "}
+            <Scholarship />{" "}
           </div>
           <Separator />
         </div>

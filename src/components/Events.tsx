@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -6,60 +7,63 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
-import ComingSoonOverlay from "./ComingSoonOverlay";
+import { Card } from "@/components/ui/card";
 
 const Events = () => {
   const events = [
     {
       id: 1,
-      date: "OCTOBER 19, 2025",
-      title: "Royal Court Coronation | Homecoming 2025",
-      image: "/events/royal-court.jpg",
-      alt: "Royal Court Coronation with crown",
-      status: "unreleased",
+      date: "OCTOBER 23, 2025",
+      title: "HU15 Welcome Happy Hour",
+      alt: "HU15 Welcome Happy Hour",
+      location: "TBD",
+      time: "6-10 PM",
     },
     {
       id: 2,
-      date: "OCTOBER 20, 2025",
-      title: "Tail gate @ _____ | Homecoming 2025",
-      image: "/events/bison-madness.jpg",
-      alt: "Tail Gate",
-      status: "unreleased",
+      date: "OCTOBER 23, 2025",
+      title: "Twerk Tape Party",
+      image: "/events/twerkTapeFlyer.png",
+      link: "https://www.ticketmaster.com/event/1500630BF0363D4F",
+      alt: "Twerk Tape Party",
+      location: "SoundCheck Lounge - 1420 K St NW, Washington, DC 20005",
+      time: "9PM - ???",
     },
     {
       id: 3,
-      date: "OCTOBER 22, 2025",
-      title: "Lavender Reception | Homecoming 2025",
-      image: "/events/lavender-reception.jpg",
-      alt: "Lavender Reception party",
-      status: "unreleased",
+      date: "OCTOBER 24, 2025",
+      title: "Visitation",
+      image: "/events/visitationFlyer.jpeg",
+      link: "https://www.eventbrite.com/e/visitation-hu-homecoming-tickets-1633061574129?aff=oddtdtcreator",
+      alt: "Visitation Party",
+      location: "Next Level DC - 17 K Street Northeast Washington, DC 20002",
+      time: "10PM - 3AM",
     },
     {
       id: 4,
-      date: "OCTOBER 23, 2025",
-      title: "Fashion Show | Homecoming 2025",
-      image: "/events/fashion-show.jpg",
-      alt: "Fashion Show",
-      status: "unreleased",
+      date: "OCTOBER 24, 2025",
+      title: "Official HU15 10-Year Celebration",
+      alt: "Official HU15 10-Year Celebration",
+      location: "TBD",
+      time: "TBD",
     },
-
     {
       id: 5,
-      date: "OCTOBER 23, 2025",
-      title: "Club ____  | Homecoming 2025",
-      image: "/events/fashion-show.jpg",
-      alt: "Fashion Show",
-      status: "unreleased",
+      date: "OCTOBER 25, 2025",
+      title: "Off the Yard (Tailgate)",
+      image: "/events/offTheYard.png",
+      link: "https://www.gohamhu.com/offtheyard",
+      alt: "Off the Yard (Tailgate)",
+      location: "The Bullpen - 1201 Half Street SW DC",
+      time: "12PM - 7PM",
     },
-
     {
       id: 6,
-      date: "OCTOBER 23, 2025",
-      title: "After Move | Homecoming 2025",
-      image: "/events/fashion-show.jpg",
-      alt: "Fashion Show",
-      status: "unreleased",
+      date: "OCTOBER 25, 2025",
+      title: "Close Friends (Invite Only)",
+      alt: "Close Friends (Invite Only)",
+      location: "TBA 10/25",
+      time: "10PM - 3AM",
     },
   ];
 
@@ -73,7 +77,7 @@ const Events = () => {
         </h2>
       </div>
 
-      {/* Events Carousel */}
+      {/* Events Carousel with external arrows */}
       <Carousel
         opts={{
           align: "start",
@@ -81,56 +85,146 @@ const Events = () => {
         }}
         className="w-full"
       >
-        <CarouselContent className="-ml-2 md:-ml-4">
-          {events.map((event) => (
-            <CarouselItem
-              key={event.id}
-              className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
-            >
-              <Card className="overflow-hidden bg-white/80 backdrop-blur-md border border-hu-gold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                {event.status === "unreleased" && <ComingSoonOverlay />}
-                <div className="relative">
-                  {/* Event Image */}
-                  <div className="relative h-48 bg-gradient-to-br from-hu-navy to-hu-light-blue">
-                    <div className="absolute inset-0 bg-black/20"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-white text-center">
-                        <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-2 mx-auto">
-                          <svg
-                            className="w-8 h-8"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </div>
-                        <p className="text-sm opacity-75">Event Image</p>
-                      </div>
-                    </div>
-                  </div>
+        {/* Row: prev | content | next */}
+        <div className="flex w-full items-center gap-4">
+          {/* Prev button OUTSIDE the track */}
+          <CarouselPrevious
+            className="
+              static translate-y-0
+              shrink-0 self-center
+              h-10 w-10 md:h-12 md:w-12
+              rounded-full  bg-white/10
+              text-yellow-600/60
+             border  border-yellow-600/30
+              hover:bg-accent hover:text-accent-foreground
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
+            "
+            aria-label="Previous events"
+          />
 
-                  {/* Event Content */}
-                  <CardContent className="p-6">
-                    <div className="space-y-3">
-                      <p className="text-sm font-semibold text-blue-600 tracking-wider">
-                        {event.date}
-                      </p>
-                      <h3 className="text-xl font-bold text-hu-navy leading-tight">
-                        {event.title}
-                      </h3>
-                    </div>
-                  </CardContent>
-                </div>
-              </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="left-2" />
-        <CarouselNext className="right-2" />
+          {/* Slide track */}
+          <div className="w-full">
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {events.map((event) => (
+                <CarouselItem
+                  key={event.id}
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                >
+                  <Card className="event-card relative aspect-[3/4] p-0 overflow-hidden border border-blue-950">
+                    {/* If we have an image, show the image card (no overlay) */}
+                    {event.image ? (
+                      event.link ? (
+                        <a
+                          href={event.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative block w-full h-full"
+                          aria-label={event.title}
+                        >
+                          <Image
+                            src={event.image}
+                            alt={event.alt}
+                            fill
+                            className="object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
+                        </a>
+                      ) : (
+                        <div
+                          className="relative w-full h-full"
+                          aria-label={event.title}
+                        >
+                          <Image
+                            src={event.image}
+                            alt={event.alt}
+                            fill
+                            className="object-cover rounded-lg"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
+                        </div>
+                      )
+                    ) : (
+                      /* If no image, show a text info layout */
+                      <div className="relative flex h-full w-full rounded-lg">
+                        {/* Background */}
+                        <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-blue-950/90 via-neutral-700 to-red-950/80  backdrop-blur" />
+                        {/* Content */}
+                        <div className="relative z-10 flex h-full w-full flex-col justify-between items-center p-4 text-white">
+                          {/* Date pill at the top */}
+                          <div className="flex justify-center w-full">
+                            <span className="inline-flex items-center rounded-md bg-white/15 px-2 py-1 text-xs font-medium tracking-wide backdrop-blur">
+                              {event.date}
+                            </span>
+                          </div>
+
+                          {/* Title in the middle */}
+                          <div className="flex-1 flex items-center justify-center w-full">
+                            <h3 className="text-lg md:text-xl font-semibold leading-snug text-center ">
+                              {(() => {
+                                const words = event.title.split(" ");
+                                const firstLine = words.slice(0, 2).join(" ");
+                                const secondLine = words.slice(2).join(" ");
+                                return (
+                                  <>
+                                    <span>{firstLine}</span>
+                                    {secondLine && (
+                                      <>
+                                        <br />
+                                        {secondLine}
+                                      </>
+                                    )}
+                                  </>
+                                );
+                              })()}
+                            </h3>
+                          </div>
+
+                          {/* Meta: location + time at the bottom */}
+                          <div className="space-y-1 text-sm text-white/90 text-center w-full rounded-md bg-white/15 px-2 py-1 ">
+                            {event.location && (
+                              <p className="line-clamp-2">
+                                Location: {event.location}
+                              </p>
+                            )}
+                            {event.time && (
+                              <p className="font-medium">Time: {event.time}</p>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Clickable layer if link exists */}
+                        {event.link ? (
+                          <a
+                            href={event.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={event.title}
+                            className="absolute inset-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                          />
+                        ) : null}
+                      </div>
+                    )}
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </div>
+
+          {/* Next button OUTSIDE the track */}
+          <CarouselNext
+            className="
+              static translate-y-0
+              shrink-0 self-center
+              h-10 w-10 md:h-12 md:w-12
+              rounded-full  bg-white/10
+              text-yellow-600/60
+             border  border-yellow-600/30
+              hover:bg-accent hover:text-accent-foreground
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
+            "
+            aria-label="Next events"
+          />
+        </div>
       </Carousel>
     </div>
   );

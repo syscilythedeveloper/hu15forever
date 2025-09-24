@@ -1,8 +1,3 @@
-//to do: add feature to upload photos to google drive
-//add dialog form to upload photos
-//---- in the dialog form, add a button to upload photos with a link to the google drive
-// to consider: Should I use an api to upload photos directly? or use a google form with pre-existing authentication to add to the drive?
-import React from "react";
 import Link from "next/link";
 
 const Memories = () => {
