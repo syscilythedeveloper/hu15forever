@@ -80,7 +80,7 @@ export default function ScholarshipFund() {
 
           {/* Footer note */}
           <div className="px-6 md:px-10 pb-8 -mt-4">
-            <p className="text-[10px] md:text-sm text-hu-gold ">
+            <p className="text-[10px] md:text-sm text-white/80 italic text-center">
               Your gift directly supports a Class of 2015 senior by helping
               cover their remaining Spring 2026 balance.
             </p>
